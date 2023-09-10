@@ -6,7 +6,7 @@ class Student{
         char name[50];
         int roll;
         //constructor for assigning value
-        Student(char *n, int r)
+        Student(const char *n, int r)
         {
             strcpy(name, n);
             roll = r;
