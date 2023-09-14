@@ -1,21 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void fun(string s)
+void ascending_fun(stringstream& s)
 {
-    stringstream ss(s);
     string word;
-    ss >> word;
-    cout << word << endl;
+    if(s>>word)
+    {
+        cout << word << endl;
+        ascending_fun(s);
+    }
+}
+void desscending_fun(stringstream& s)
+{
+    string word;
+    if(s>>word)
+    {
+        desscending_fun(s);
+        cout << word << endl;
+    }
 }
 
 int main()
 {
     string sentence;
     getline(cin, sentence);
-    cout << sentence << endl;
-    sentence.pop_back();
-    cout << sentence << endl;
+    stringstream ss(sentence);
+    ascending_fun(ss);
+    cout << "-----------" << endl;
+    stringstream ss2(sentence);
+    desscending_fun(ss2);
 
     return 0;
 }
